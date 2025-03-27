@@ -3,7 +3,6 @@ import numpy as np
 import orhelper
 from random import gauss
 import math
-import gui
 
 
 class LandingPoints(list):
@@ -83,9 +82,3 @@ def bearing_flat(start, end):
     dy = (end.getLatitudeDeg() - start.getLatitudeDeg()) * METERS_PER_DEGREE_LATITUDE
     dx = (end.getLongitudeDeg() - start.getLongitudeDeg()) * METERS_PER_DEGREE_LONGITUDE_EQUATOR
     return math.pi / 2 - math.atan(dy / dx)
-
-
-if __name__ == '__main__':
-    points = LandingPoints()
-    points.add_simulations(20)
-    points.print_stats()

@@ -38,20 +38,22 @@ class App:
 
         self.loading_label = tk.Label(self.loading_frame, text="Running simulations...")
         self.loading_label.pack(pady=20)
+    """
+    # Load the GIF
+            self.gif_path = os.path.join(os.path.dirname(__file__), "rocket.gif")  # Path to the GIF
+            try:
+                self.gif = Image.open(self.gif_path)
+                self.frames = [ImageTk.PhotoImage(self.gif.copy().seek(frame)) for frame in range(self.gif.n_frames)]
+            except Exception as e:
+                print(f"Error loading GIF: {e}")
+                self.frames = None
+    
+            if self.frames:
+                self.gif_label = tk.Label(self.loading_frame)
+                self.gif_label.pack()
+                self.animate_gif()
+    """
 
-        # Load the GIF
-        self.gif_path = os.path.join(os.path.dirname(__file__), "rocket.gif")  # Path to the GIF
-        try:
-            self.gif = Image.open(self.gif_path)
-            self.frames = [ImageTk.PhotoImage(self.gif.copy().seek(frame)) for frame in range(self.gif.n_frames)]
-        except Exception as e:
-            print(f"Error loading GIF: {e}")
-            self.frames = None
-
-        if self.frames:
-            self.gif_label = tk.Label(self.loading_frame)
-            self.gif_label.pack()
-            self.animate_gif()
 
     def select_file(self):
         file_path = filedialog.askopenfilename(filetypes=[("OpenRocket files", "*.ork")])
@@ -120,5 +122,5 @@ class App:
 def buildGui():
     root = tk.Tk()
     app = App(root)
-    root.mainloop()
+    #root.mainloop()
     return app.ork_file, app.num_simulations
