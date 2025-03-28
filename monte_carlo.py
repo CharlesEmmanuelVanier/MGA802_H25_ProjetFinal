@@ -83,8 +83,8 @@ class App:
                     model = opts.getWindModel()
                     model.clearLevels()
                     #Loop here to add all the wind levels
-                    model.addWindLevel(500, 1,90,0)
-                    model.addWindLevel(750, 5,90,0)
+                    model.addWindLevel(500, 1, 90, 0)
+                    model.addWindLevel(750, 5, 90, 0)
                     orh.run_simulation(sim)
 
             # After simulation is done, notify and reset UI

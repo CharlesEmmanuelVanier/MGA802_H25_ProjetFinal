@@ -5,9 +5,7 @@ import monte_carlo
 #Pas certain de cette ligne (?)
 if __name__ == '__main__':
 
-    SimInit = []
-    SimInit = gui.buildGui()
-    print(SimInit)
+    [orkfile, numsim, wind_data_range] = gui.buildGui()
 
    # points = orhelperdriver.LandingPoints()
    # points.print_stats()
