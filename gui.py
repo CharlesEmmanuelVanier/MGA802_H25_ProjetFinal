@@ -2,13 +2,8 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 import tkcalendar
 from PIL import Image, ImageTk
-#TO orhelerdriver
-import threading
-import os
-#Shouldnt be useful here
-import orhelper
-import math
 from random import gauss, random, randrange
+import json
 
 class Gui:
     def __init__(self, root):
@@ -79,7 +74,9 @@ class Gui:
 
 
     def start_loading(self):
+
         self.ork_file = self.ork_file or ""
+
         try:
             self.num_simulations = int(self.simulation_count.get())
         except ValueError:
@@ -100,12 +97,32 @@ class Gui:
             self.wind_data_range = [self.date_end, self.date_start]
 
         #Making a list of a list of wind_data
-        sample_rate = self.wind_date_range / self.num_simulations
+        sample_rate = len(self.wind_data_range) / self.num_simulations
         if sample_rate > 1:
             get_random_wind_data(self.wind_date_range, self.num_simulations)
         else:
             sample_rate = 1/sample_rate
             sure_sim, random_sim = divmod(sample_rate,1)
+
+            #Ouvre le fichier de donnée de vent
+            with open("data/CYYU.upper_winds.json", 'r', encoding="utf-8") as f:
+                wind_data = json.load(f)
+
+            # Définir la période (AM), Je ne vais que m'intéresser au donnée le matin par simplicité
+            periode_cible = "AM"
+
+            resultats = []
+            for day in self.wind_data_range:
+                for entry in wind_data:
+                    # Extraire uniquement la partie "YYYY-MM-DD" de "datetime"
+                    datetime_str = entry.get("datetime", "")[:10]  # Garde que 'YYYY-MM-DD'
+
+                    # Vérifier si la date correspond et que "AM" existe
+                    if datetime_str == day and "AM" in entry and "data" in entry["AM"]:
+                        resultats.extend(entry["AM"]["data"])  # Ajouter les données de vent AM
+                        print(json.dumps(resultats, indent=4, ensure_ascii=False))
+
+
             #add all the days of wind data for a sure_sim amount of time
             #call get_random_wind_data for the random_sim number of simulation
 
