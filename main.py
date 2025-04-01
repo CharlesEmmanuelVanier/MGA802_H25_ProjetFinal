@@ -7,7 +7,8 @@ from datetime import datetime
 #Pas certain de cette ligne (?)
 if __name__ == '__main__':
 
-    [orkfile, numsim, wind_data_range] = gui.buildGui()
+    wind_data = gui.buildGui()
+    print(wind_data.wind_data)
 
    # points = orhelperdriver.LandingPoints()
    # points.print_stats()

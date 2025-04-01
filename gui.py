@@ -4,6 +4,8 @@ import tkcalendar
 from PIL import Image, ImageTk
 from random import gauss, random, randrange
 import json
+from datetime import datetime, timedelta
+
 
 class Gui:
     def __init__(self, root):
@@ -58,20 +60,37 @@ class Gui:
         else:
             self.file_label.config(text="No file selected", fg="red")
 
+    def get_random_wind_data(self, num_sim_restant):
+        periode_cible = "AM"
+        data_to_return = []
+        with open("data/CYYU.upper_winds.json", 'r', encoding="utf-8") as f:
+            wind_database = json.load(f)
 
+        for i in range(num_sim_restant):
+            resultats = []
+            random_number = randrange(0, len(self.wind_data_range))
+            day = self.wind_data_range[random_number]
+            for entry in wind_database:
+                # Extraire uniquement la partie "YYYY-MM-DD" de "datetime"
+                datetime_str = entry.get("datetime", "")[:10]  # Garde que 'YYYY-MM-DD'
 
-    def get_random_wind_data(self, date_range, num_sim):
+                # Vérifier si la date correspond et que "AM" existe
+                if datetime_str == day and periode_cible in entry and "data" in entry[periode_cible]:
+                    resultats.extend(entry["AM"]["data"])  # Ajouter les données de vent AM
+                    data_to_return.append(self.wind_data_to_or_input(resultats, 1))
 
-        wind_data = []
-        for i in num_sim:
-            random_number = random.randrange(0,sample_rate)
-            #Add wind_data from .json
-            # from [i*sample_rate to (i*sample_rate+sample_rate-1)]
-            # get the i*sameple_rate + random_number data and add it to wind_data
-            #Return a list of a list of wind data
+        return data_to_return
 
+    def wind_data_to_or_input(self, wind_data, duplicates):
+        # Modify a day of wind_data into a list of list
+        result = []
+        for data in wind_data:
+            result.append([data["altitude"], data["wind"], data["heading"], 0])
 
+        for i in range(duplicates):
+            result.append(result)
 
+        return result
 
     def start_loading(self):
 
@@ -91,40 +110,43 @@ class Gui:
             return
 
         # Makes sure the first date in list is the oldest
-        if self.date_start.get_date() - self.date_end.get_date():
-            self.wind_data_range = [self.date_start, self.date_end]
-        else:
-            self.wind_data_range = [self.date_end, self.date_start]
+        if self.date_start.get_date() > self.date_end.get_date():
+            temp = self.date_start
+            self.date_start = self.date_end
+            self.date_end = temp
 
-        #Making a list of a list of wind_data
+        #Creates the range of date to use for acquiring data
+        self.wind_data_range = [(self.date_start.get_date() + timedelta(days=i)).strftime("%Y-%m-%d")
+                     for i in range((self.date_end.get_date() - self.date_start.get_date()).days + 1)]
+
+        #Identify our sample_rate of data in the data range
         sample_rate = len(self.wind_data_range) / self.num_simulations
         if sample_rate > 1:
-            get_random_wind_data(self.wind_date_range, self.num_simulations)
+            self.wind_data.append(self.get_random_wind_data(self.num_simulations))
         else:
             sample_rate = 1/sample_rate
             sure_sim, random_sim = divmod(sample_rate,1)
 
             #Ouvre le fichier de donnée de vent
             with open("data/CYYU.upper_winds.json", 'r', encoding="utf-8") as f:
-                wind_data = json.load(f)
+                wind_database = json.load(f)
 
             # Définir la période (AM), Je ne vais que m'intéresser au donnée le matin par simplicité
             periode_cible = "AM"
 
-            resultats = []
             for day in self.wind_data_range:
-                for entry in wind_data:
+                resultats = []
+                for entry in wind_database:
                     # Extraire uniquement la partie "YYYY-MM-DD" de "datetime"
                     datetime_str = entry.get("datetime", "")[:10]  # Garde que 'YYYY-MM-DD'
 
                     # Vérifier si la date correspond et que "AM" existe
-                    if datetime_str == day and "AM" in entry and "data" in entry["AM"]:
+                    if datetime_str == day and periode_cible in entry and "data" in entry[periode_cible]:
                         resultats.extend(entry["AM"]["data"])  # Ajouter les données de vent AM
-                        print(json.dumps(resultats, indent=4, ensure_ascii=False))
-
-
-            #add all the days of wind data for a sure_sim amount of time
-            #call get_random_wind_data for the random_sim number of simulation
+                        self.wind_data.append(self.wind_data_to_or_input(resultats,int(sure_sim)))
+            #Add randoms days of data to complete our data set
+            if self.num_simulations - sure_sim != 0:
+                self.wind_data.append(self.get_random_wind_data(self.num_simulations - int(sure_sim)))
 
 
         self.root.quit()
@@ -134,4 +156,4 @@ def buildGui():
     root = tk.Tk()
     gui = Gui(root)
     root.mainloop()
-    return gui.ork_file, gui.num_simulations, gui.wind_data
+    return gui
