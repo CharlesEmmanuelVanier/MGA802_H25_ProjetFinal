@@ -83,12 +83,13 @@ class Gui:
 
     def wind_data_to_or_input(self, wind_data, duplicates):
         # Modify a day of wind_data into a list of list
+        wind_data_good_format_to_append = []
         result = []
         for data in wind_data:
-            result.append([data["altitude"], data["wind"], data["heading"], 0])
+            wind_data_good_format_to_append.append([data["altitude"], data["wind"], data["heading"], 0])
 
         for i in range(duplicates):
-            result.append(result)
+            result.append(wind_data_good_format_to_append)
 
         return result
 
@@ -143,10 +144,10 @@ class Gui:
                     # Vérifier si la date correspond et que "AM" existe
                     if datetime_str == day and periode_cible in entry and "data" in entry[periode_cible]:
                         resultats.extend(entry["AM"]["data"])  # Ajouter les données de vent AM
-                        self.wind_data.append(self.wind_data_to_or_input(resultats,int(sure_sim)))
+                self.wind_data.extend(self.wind_data_to_or_input(resultats,int(sure_sim)))
             #Add randoms days of data to complete our data set
-            if self.num_simulations - sure_sim != 0:
-                self.wind_data.append(self.get_random_wind_data(self.num_simulations - int(sure_sim)))
+            if self.num_simulations - len(self.wind_data) != 0:
+                self.wind_data.extend(self.get_random_wind_data(self.num_simulations - len(self.wind_data)))
 
 
         self.root.quit()
