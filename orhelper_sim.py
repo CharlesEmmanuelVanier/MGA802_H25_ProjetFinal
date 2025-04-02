@@ -7,10 +7,9 @@ class OpenRocketSimulation:
 
         self.ork_file = ork_file
         self.wind_data = wind_data
-        self.num_simulations = len(self.wind_data)
 
     def simulation(self):
-
+        i = 0
         try:
             with orhelper.OpenRocketInstance() as instance:
                 # Load the document and get simulation
@@ -23,22 +22,34 @@ class OpenRocketSimulation:
                 opts = sim.getOptions()
 
                 # Run num simulations and add to self
-                for day_sim in range(self.num_simulations):
-                    print('Running simulation ', day_sim+1)
+                for data in self.wind_data:
+                    print('Running simulation ', i+1)
 
                     opts.setWindModelType(instance.wind.WindModelType.MULTI_LEVEL)  # Set multi-level winds
                     model = opts.getWindModel()
                     model.clearLevels()
-                    # Loop here to add all the wind levels
-                    model.addWindLevel(500, 1, 90, 0)
-                    model.addWindLevel(750, 5, 90, 0)
+                    # Adding all wind level for a day of simulation
+                    for wind in data:
+                        model.addWindLevel(wind[0],wind[1],wind[2],wind[3])
+
                     orh.run_simulation(sim)
+                    self.extracting_important_data()
+
+                    i += 1
 
             # After simulation is done, notify and reset UI
-            #self.on_simulation_done()
+            self.on_simulation_done()
 
         except Exception as e:
             print(f"Error during simulation: {e}")
-            #messagebox.showerror("Simulation Error", f"An error occurred during the simulation: {e}")
+
+    def extracting_important_data(self):
+        pass
+
+    def on_simulation_done(self):
+        #data stuff
+        pass
+
+
 
 

@@ -77,7 +77,7 @@ class Gui:
                 # Vérifier si la date correspond et que "AM" existe
                 if datetime_str == day and periode_cible in entry and "data" in entry[periode_cible]:
                     resultats.extend(entry["AM"]["data"])  # Ajouter les données de vent AM
-                    data_to_return.append(self.wind_data_to_or_input(resultats, 1))
+                    data_to_return.extend(self.wind_data_to_or_input(resultats, 1))
 
         return data_to_return
 
@@ -123,7 +123,7 @@ class Gui:
         #Identify our sample_rate of data in the data range
         sample_rate = len(self.wind_data_range) / self.num_simulations
         if sample_rate > 1:
-            self.wind_data.append(self.get_random_wind_data(self.num_simulations))
+            self.wind_data.extend(self.get_random_wind_data(self.num_simulations))
         else:
             sample_rate = 1/sample_rate
             sure_sim, random_sim = divmod(sample_rate,1)
