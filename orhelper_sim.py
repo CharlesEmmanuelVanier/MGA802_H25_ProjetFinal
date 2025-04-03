@@ -15,6 +15,8 @@ class OpenRocketSimulation:
         self.ranges = []
         self.bearings = []
         self.apogee = []
+        self.flightdata = dict()
+        self.stability = np.empty(1)
         self.landingpoints = []
 
     def simulation(self):
@@ -48,6 +50,7 @@ class OpenRocketSimulation:
                     orh.run_simulation(sim, listeners=(airstarter, lp))
                     self.landingpoints.append(lp)
                     self.apogee.append(FlightEvent.APOGEE.value)
+                    self.flightdata = orh.get_timeseries(sim, [FlightDataType.TYPE_TIME, FlightDataType.TYPE_STABILITY])
 
                     i += 1
 
@@ -62,7 +65,20 @@ class OpenRocketSimulation:
             'Rocket landing zone %3.2f m +- %3.2f m bearing %3.2f deg +- %3.4f deg from launch site. Based on %i simulations.' % \
             (np.mean(self.ranges), np.std(self.ranges), np.degrees(np.mean(self.bearings)),
              np.degrees(np.std(self.bearings)), len(self.landingpoints)))
-        print('Flight Apogee', np.mean(self.apogee), 'm')
+        print('Mean flight Apogee', np.mean(self.apogee), 'm')
+    """
+    fig = plt.figure()
+        ax1 = fig.add_subplot(111)
+
+
+        ax1.plot(self.flightdata[FlightDataType.TYPE_TIME], self.flightdata[FlightDataType.TYPE_STABILITY], 'b-')
+        ax1.set_xlabel('Time (s)')
+        ax1.set_ylabel('Stability', color='b')
+    """
+
+
+
+
 
 
 
