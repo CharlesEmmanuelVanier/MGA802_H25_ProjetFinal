@@ -5,6 +5,7 @@ from orhelper import FlightDataType, FlightEvent
 from matplotlib import pyplot as plt
 import math
 import numpy as np
+import seaborn as sns
 
 class OpenRocketSimulation:
 
@@ -15,8 +16,8 @@ class OpenRocketSimulation:
         self.ranges = []
         self.bearings = []
         self.apogee = []
+        self.stability = []
         self.flightdata = dict()
-        self.stability = np.empty(1)
         self.landingpoints = []
 
     def simulation(self):
@@ -26,7 +27,7 @@ class OpenRocketSimulation:
                 # Load the document and get simulation
                 orh = orhelper.Helper(instance)
                 doc = orh.load_doc(self.ork_file)
-                sim = doc.getSimulation(0)
+                sim = doc.getSimulation(3)
                 # Randomize various parameters
                 opts = sim.getOptions()
 
@@ -41,16 +42,14 @@ class OpenRocketSimulation:
                     for wind in data:
                         model.addWindLevel(wind[0],wind[1],wind[2],wind[3])
 
-                    #Actual openrocket simulation
-                    orh.run_simulation(sim)
-
-
                     airstarter = AirStart(0)
                     lp = LandingPoint(self.ranges, self.bearings)
                     orh.run_simulation(sim, listeners=(airstarter, lp))
                     self.landingpoints.append(lp)
-                    self.apogee.append(FlightEvent.APOGEE.value)
-                    self.flightdata = orh.get_timeseries(sim, [FlightDataType.TYPE_TIME, FlightDataType.TYPE_STABILITY])
+                    self.flightdata = orh.get_timeseries(sim, [FlightDataType.TYPE_TIME, FlightDataType.TYPE_STABILITY, FlightDataType.TYPE_ALTITUDE])
+                    if max(self.flightdata[FlightDataType.TYPE_ALTITUDE]) > 1000:
+                        self.apogee.append(max(self.flightdata[FlightDataType.TYPE_ALTITUDE]))
+                        self.stability = np.concatenate(self.stability, self.flightdata[FlightDataType.TYPE_STABILITY])
 
                     i += 1
 
@@ -66,21 +65,46 @@ class OpenRocketSimulation:
             (np.mean(self.ranges), np.std(self.ranges), np.degrees(np.mean(self.bearings)),
              np.degrees(np.std(self.bearings)), len(self.landingpoints)))
         print('Mean flight Apogee', np.mean(self.apogee), 'm')
-    """
-    fig = plt.figure()
-        ax1 = fig.add_subplot(111)
 
+
+        # Scatter points from Monte Carlo
+        x = self.ranges * np.cos(self.bearings)
+        y = self.ranges * np.sin(self.bearings)
+
+
+        # KDE heatmap
+        kde = sns.kdeplot(x=x, y=y, fill=False, cmap="viridis", levels=10, thresh=0.01)
+
+        plt.plot(0, 0, 'ro', label='Launchpad')
+        plt.title("Monte Carlo Rocket Landing Density")
+        plt.xlabel("Landing position (m)")
+        plt.ylabel("Landing position (m)")
+        plt.legend()
+        plt.axis('equal')
+        plt.grid(True)
+        plt.show()
+        
+
+
+        """
+        #Plotting stability over time
+        fig = plt.figure()
+        ax1 = fig.add_subplot(111)
 
         ax1.plot(self.flightdata[FlightDataType.TYPE_TIME], self.flightdata[FlightDataType.TYPE_STABILITY], 'b-')
         ax1.set_xlabel('Time (s)')
         ax1.set_ylabel('Stability', color='b')
-    """
+        plt.show()
+        """
 
+class Apogee(orhelper.AbstractSimulationListener):
+    def __init__(self):
+        self.apogee = 0
+        pass
 
-
-
-
-
+    def endSimulation(self, status, simulation_exception):
+        #EVENTS = get_events(sim)
+        pass
 
 
 class LandingPoint(orhelper.AbstractSimulationListener):
