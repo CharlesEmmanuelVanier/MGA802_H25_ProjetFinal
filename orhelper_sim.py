@@ -40,16 +40,19 @@ class OpenRocketSimulation:
                     model.clearLevels()
                     # Adding all wind level for a day of simulation
                     for wind in data:
-                        model.addWindLevel(wind[0],wind[1],wind[2],wind[3])
+                        model.addWindLevel(wind[0],wind[1],wind[2],0.2)
 
                     airstarter = AirStart(0)
                     lp = LandingPoint(self.ranges, self.bearings)
                     orh.run_simulation(sim, listeners=(airstarter, lp))
-                    self.landingpoints.append(lp)
+
                     self.flightdata = orh.get_timeseries(sim, [FlightDataType.TYPE_TIME, FlightDataType.TYPE_STABILITY, FlightDataType.TYPE_ALTITUDE])
-                    if max(self.flightdata[FlightDataType.TYPE_ALTITUDE]) > 1000:
-                        self.apogee.append(max(self.flightdata[FlightDataType.TYPE_ALTITUDE]))
-                        self.stability = np.concatenate(self.stability, self.flightdata[FlightDataType.TYPE_STABILITY])
+
+                    self.apogee.append(max(self.flightdata[FlightDataType.TYPE_ALTITUDE]))
+                    self.landingpoints.append(lp)
+                    #self.stability = np.concatenate(self.stability, self.flightdata[FlightDataType.TYPE_STABILITY])
+                    print(max(self.flightdata[FlightDataType.TYPE_ALTITUDE]))
+
 
                     i += 1
 
@@ -73,7 +76,7 @@ class OpenRocketSimulation:
 
 
         # KDE heatmap
-        kde = sns.kdeplot(x=x, y=y, fill=False, cmap="viridis", levels=10, thresh=0.01)
+        kde = sns.kdeplot(x=x, y=y, fill=True, cmap="viridis", levels=10, thresh=0.01)
 
         plt.plot(0, 0, 'ro', label='Launchpad')
         plt.title("Monte Carlo Rocket Landing Density")
