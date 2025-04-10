@@ -3,8 +3,11 @@ from orhelper import FlightDataType
 import orhelper
 from orhelper import FlightDataType, FlightEvent
 from matplotlib import pyplot as plt
+from matplotlib import patches as patches
+from matplotlib.patches import Ellipse
 import math
 import numpy as np
+from scipy import stats as stats
 import seaborn as sns
 
 class OpenRocketSimulation:
@@ -51,7 +54,7 @@ class OpenRocketSimulation:
                     self.apogee.append(max(self.flightdata[FlightDataType.TYPE_ALTITUDE]))
                     self.landingpoints.append(lp)
                     #self.stability = np.concatenate(self.stability, self.flightdata[FlightDataType.TYPE_STABILITY])
-                    print(max(self.flightdata[FlightDataType.TYPE_ALTITUDE]))
+                    #print(max(self.flightdata[FlightDataType.TYPE_ALTITUDE]))
 
 
                     i += 1
@@ -73,20 +76,59 @@ class OpenRocketSimulation:
         # Scatter points from Monte Carlo
         x = self.ranges * np.cos(self.bearings)
         y = self.ranges * np.sin(self.bearings)
+        data = np.column_stack((x,y))
+        mean = np.mean(data, axis=0)
+        cov = np.cov(data,rowvar=False)
+
+        #Cocentric circle
+        confidences = [0.80, 0.90, 0.99]
+        #Façon de représenter la distribution de donnée en 2D
+        chisq_vals = []
+        for i in confidences:
+            chisq_vals.append(np.sqrt(stats.chi2.ppf(i, df=2)) )
 
 
-        # KDE heatmap
-        kde = sns.kdeplot(x=x, y=y, fill=True, cmap="viridis", levels=10, thresh=0.01)
+        # Plot
+        (fig,ax) = plt.subplots()
+        ax.scatter(x, y, label='Landing points')
+        colors = ['blue', 'green', 'red']
 
-        plt.plot(0, 0, 'ro', label='Launchpad')
-        plt.title("Monte Carlo Rocket Landing Density")
-        plt.xlabel("Landing position (m)")
-        plt.ylabel("Landing position (m)")
-        plt.legend()
-        plt.axis('equal')
+        for i, k in enumerate(chisq_vals):
+            
+            radius = k * np.std(self.ranges)
+            circle = patches.Circle(xy=mean, radius=radius,
+                               edgecolor=colors[i],
+                              facecolor='none', label=f'{int(confidences[i] * 100)}% landing zone')
+            ax.add_patch(circle)
+
+
+
+
+        #ax.set_aspect('equal')
+        ax.legend()
+        ax.set_title('Confidence Ellipses')
         plt.grid(True)
         plt.show()
+
+
+
+
+
+        """
+        # KDE heatmap
+                kde = sns.kdeplot(x=x, y=y, fill=True, cmap="viridis", levels=10, thresh=0.01)
         
+                plt.plot(0, 0, 'ro', label='Launchpad')
+                plt.title("Monte Carlo Rocket Landing Density")
+                plt.xlabel("Landing position (m)")
+                plt.ylabel("Landing position (m)")
+                plt.legend()
+                plt.axis('equal')
+                plt.grid(True)
+                plt.show()
+        """
+
+
 
 
         """
@@ -147,7 +189,7 @@ def range_flat(start, end):
 def bearing_flat(start, end):
     dy = (end.getLatitudeDeg() - start.getLatitudeDeg()) * METERS_PER_DEGREE_LATITUDE
     dx = (end.getLongitudeDeg() - start.getLongitudeDeg()) * METERS_PER_DEGREE_LONGITUDE_EQUATOR
-    return math.pi / 2 - math.atan(dy / dx)
+    return  math.atan2(dy , dx)
 
 
 
