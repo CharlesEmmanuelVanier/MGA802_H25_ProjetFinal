@@ -72,7 +72,6 @@ class OpenRocketSimulation:
              np.degrees(np.std(self.bearings)), len(self.landingpoints)))
         print('Mean flight Apogee', np.mean(self.apogee), 'm')
 
-
         # Scatter points from Monte Carlo
         x = self.ranges * np.cos(self.bearings)
         y = self.ranges * np.sin(self.bearings)
