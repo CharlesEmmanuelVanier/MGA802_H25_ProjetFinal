@@ -1,0 +1,8 @@
+numpy
+matplotlib
+jpype1
+pillow
+tkcalendar
+scipy
+seaborn
+orhelper 

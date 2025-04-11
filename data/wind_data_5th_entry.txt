@@ -1,0 +1,1577 @@
+[
+    {
+        "_id": {
+            "$oid": "67669fb147ab7d5a4ccfb180"
+        },
+        "AM": {
+            "data": [
+                {
+                    "altitude": 3000,
+                    "heading": 350,
+                    "wind": 18,
+                    "temperature": 0
+                },
+                {
+                    "altitude": 6000,
+                    "heading": 350,
+                    "wind": 21,
+                    "temperature": -21
+                },
+                {
+                    "altitude": 9000,
+                    "heading": 350,
+                    "wind": 29,
+                    "temperature": -23
+                },
+                {
+                    "altitude": 12000,
+                    "heading": 350,
+                    "wind": 37,
+                    "temperature": -26
+                },
+                {
+                    "altitude": 18000,
+                    "heading": 350,
+                    "wind": 52,
+                    "temperature": -35
+                },
+                {
+                    "altitude": 24000,
+                    "heading": 350,
+                    "wind": 66,
+                    "temperature": -42
+                },
+                {
+                    "altitude": 30000,
+                    "heading": 340,
+                    "wind": 75,
+                    "temperature": -51
+                },
+                {
+                    "altitude": 34000,
+                    "heading": 340,
+                    "wind": 67,
+                    "temperature": -54
+                },
+                {
+                    "altitude": 39000,
+                    "heading": 330,
+                    "wind": 55,
+                    "temperature": -52
+                },
+                {
+                    "altitude": 45000,
+                    "heading": 320,
+                    "wind": 42,
+                    "temperature": -52
+                },
+                {
+                    "altitude": 53000,
+                    "heading": 300,
+                    "wind": 48,
+                    "temperature": -55
+                }
+            ],
+            "startValidity": "2024-12-21T08:00:00",
+            "endValidity": "2024-12-21T14:59:59"
+        },
+        "PM": {
+            "data": [
+                {
+                    "altitude": 3000,
+                    "heading": 0,
+                    "wind": 0,
+                    "temperature": 0
+                },
+                {
+                    "altitude": 6000,
+                    "heading": 360,
+                    "wind": 16,
+                    "temperature": -20
+                },
+                {
+                    "altitude": 9000,
+                    "heading": 350,
+                    "wind": 25,
+                    "temperature": -21
+                },
+                {
+                    "altitude": 12000,
+                    "heading": 350,
+                    "wind": 32,
+                    "temperature": -25
+                },
+                {
+                    "altitude": 18000,
+                    "heading": 350,
+                    "wind": 51,
+                    "temperature": -33
+                },
+                {
+                    "altitude": 24000,
+                    "heading": 340,
+                    "wind": 63,
+                    "temperature": -41
+                },
+                {
+                    "altitude": 30000,
+                    "heading": 340,
+                    "wind": 70,
+                    "temperature": -51
+                },
+                {
+                    "altitude": 34000,
+                    "heading": 340,
+                    "wind": 64,
+                    "temperature": -55
+                },
+                {
+                    "altitude": 39000,
+                    "heading": 330,
+                    "wind": 53,
+                    "temperature": -54
+                },
+                {
+                    "altitude": 45000,
+                    "heading": 320,
+                    "wind": 45,
+                    "temperature": -53
+                },
+                {
+                    "altitude": 53000,
+                    "heading": 310,
+                    "wind": 46,
+                    "temperature": -56
+                }
+            ],
+            "startValidity": "2024-12-21T15:00:00",
+            "endValidity": "2024-12-21T23:59:59"
+        },
+        "NIGHT": {
+            "data": [
+                {
+                    "altitude": 3000,
+                    "heading": 0,
+                    "wind": 0,
+                    "temperature": 0
+                },
+                {
+                    "altitude": 6000,
+                    "heading": 320,
+                    "wind": 7,
+                    "temperature": -17
+                },
+                {
+                    "altitude": 9000,
+                    "heading": 330,
+                    "wind": 14,
+                    "temperature": -19
+                },
+                {
+                    "altitude": 12000,
+                    "heading": 330,
+                    "wind": 20,
+                    "temperature": -21
+                },
+                {
+                    "altitude": 18000,
+                    "heading": 320,
+                    "wind": 35,
+                    "temperature": -31
+                },
+                {
+                    "altitude": 24000,
+                    "heading": 330,
+                    "wind": 44,
+                    "temperature": -41
+                },
+                {
+                    "altitude": 30000,
+                    "heading": 320,
+                    "wind": 49,
+                    "temperature": -54
+                },
+                {
+                    "altitude": 34000,
+                    "heading": 320,
+                    "wind": 48,
+                    "temperature": -57
+                },
+                {
+                    "altitude": 39000,
+                    "heading": 330,
+                    "wind": 51,
+                    "temperature": -54
+                },
+                {
+                    "altitude": 45000,
+                    "heading": 320,
+                    "wind": 49,
+                    "temperature": -53
+                },
+                {
+                    "altitude": 53000,
+                    "heading": 310,
+                    "wind": 55,
+                    "temperature": -55
+                }
+            ],
+            "startValidity": "2024-12-22T00:00:00",
+            "endValidity": "2024-12-22T12:00:00"
+        },
+        "RAW": {
+            "data": [
+                {
+                    "meta": {
+                        "now": "2024-12-21T11:00:01.659",
+                        "count": {
+                            "upperwind": 6
+                        },
+                        "messages": []
+                    },
+                    "data": [
+                        {
+                            "type": "upperwind",
+                            "pk": "351169499",
+                            "location": "YYU",
+                            "startValidity": "2024-12-22T00:00:00",
+                            "endValidity": "2024-12-22T12:00:00",
+                            "text": "[\"FBCN35\", \"KWNO\", \"2024-12-21T07:57:00+00:00\", \"2024-12-21T06:00:00+00:00\", \"2024-12-22T06:00:00+00:00\", \"2024-12-22T00:00:00+00:00\", \"2024-12-22T12:00:00+00:00\", null, null, null, null, [[39000,330,51,-54,0],[45000,320,49,-53,0],[53000,310,55,-55,0],[24000,330,44,-41,0],[30000,320,49,-54,0],[34000,320,48,-57,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351170793",
+                            "location": "YYU",
+                            "startValidity": "2024-12-22T00:00:00",
+                            "endValidity": "2024-12-22T12:00:00",
+                            "text": "[\"FBCN35\", \"CWAO\", \"2024-12-21T09:30:00+00:00\", \"2024-12-21T06:00:00+00:00\", \"2024-12-22T06:00:00+00:00\", \"2024-12-22T00:00:00+00:00\", \"2024-12-22T12:00:00+00:00\", null, null, null, null, [[9000,330,14,-19,0],[3000,null,0,null,0],[18000,320,35,-31,0],[12000,330,20,-21,0],[6000,320,7,-17,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351169489",
+                            "location": "YYU",
+                            "startValidity": "2024-12-21T15:00:00",
+                            "endValidity": "2024-12-21T23:59:59",
+                            "text": "[\"FBCN33\", \"KWNO\", \"2024-12-21T07:57:00+00:00\", \"2024-12-21T06:00:00+00:00\", \"2024-12-21T18:00:00+00:00\", \"2024-12-21T15:00:00+00:00\", \"2024-12-22T00:00:00+00:00\", null, null, null, null, [[24000,340,63,-41,0],[53000,310,46,-56,0],[45000,320,45,-53,0],[39000,330,53,-54,0],[34000,340,64,-55,0],[30000,340,70,-51,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351170627",
+                            "location": "YYU",
+                            "startValidity": "2024-12-21T15:00:00",
+                            "endValidity": "2024-12-21T23:59:59",
+                            "text": "[\"FBCN33\", \"CWAO\", \"2024-12-21T09:30:00+00:00\", \"2024-12-21T06:00:00+00:00\", \"2024-12-21T18:00:00+00:00\", \"2024-12-21T15:00:00+00:00\", \"2024-12-22T00:00:00+00:00\", null, null, null, null, [[9000,350,25,-21,0],[6000,360,16,-20,0],[3000,null,0,null,0],[12000,350,32,-25,0],[18000,350,51,-33,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351169484",
+                            "location": "YYU",
+                            "startValidity": "2024-12-21T08:00:00",
+                            "endValidity": "2024-12-21T14:59:59",
+                            "text": "[\"FBCN31\", \"KWNO\", \"2024-12-21T07:57:00+00:00\", \"2024-12-21T06:00:00+00:00\", \"2024-12-21T12:00:00+00:00\", \"2024-12-21T08:00:00+00:00\", \"2024-12-21T15:00:00+00:00\", null, null, null, null, [[53000,300,48,-55,0],[24000,350,66,-42,0],[30000,340,75,-51,0],[34000,340,67,-54,0],[39000,330,55,-52,0],[45000,320,42,-52,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351170551",
+                            "location": "YYU",
+                            "startValidity": "2024-12-21T08:00:00",
+                            "endValidity": "2024-12-21T14:59:59",
+                            "text": "[\"FBCN31\", \"CWAO\", \"2024-12-21T09:20:00+00:00\", \"2024-12-21T06:00:00+00:00\", \"2024-12-21T12:00:00+00:00\", \"2024-12-21T08:00:00+00:00\", \"2024-12-21T15:00:00+00:00\", null, null, null, null, [[12000,350,37,-26,0],[6000,350,21,-21,0],[3000,350,18,null,0],[18000,350,52,-35,0],[9000,350,29,-23,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "datetime": "2024-12-21T11:00:01.265559"
+    },
+    {
+        "_id": {
+            "$oid": "6767f1313a0ebc512ba917ff"
+        },
+        "AM": {
+            "data": [
+                {
+                    "altitude": 3000,
+                    "heading": 240,
+                    "wind": 12,
+                    "temperature": 0
+                },
+                {
+                    "altitude": 6000,
+                    "heading": 290,
+                    "wind": 13,
+                    "temperature": -17
+                },
+                {
+                    "altitude": 9000,
+                    "heading": 300,
+                    "wind": 14,
+                    "temperature": -18
+                },
+                {
+                    "altitude": 12000,
+                    "heading": 310,
+                    "wind": 19,
+                    "temperature": -21
+                },
+                {
+                    "altitude": 18000,
+                    "heading": 310,
+                    "wind": 32,
+                    "temperature": -30
+                },
+                {
+                    "altitude": 24000,
+                    "heading": 320,
+                    "wind": 39,
+                    "temperature": -40
+                },
+                {
+                    "altitude": 30000,
+                    "heading": 330,
+                    "wind": 46,
+                    "temperature": -53
+                },
+                {
+                    "altitude": 34000,
+                    "heading": 330,
+                    "wind": 51,
+                    "temperature": -55
+                },
+                {
+                    "altitude": 39000,
+                    "heading": 320,
+                    "wind": 52,
+                    "temperature": -54
+                },
+                {
+                    "altitude": 45000,
+                    "heading": 310,
+                    "wind": 58,
+                    "temperature": -53
+                },
+                {
+                    "altitude": 53000,
+                    "heading": 310,
+                    "wind": 58,
+                    "temperature": -56
+                }
+            ],
+            "startValidity": "2024-12-22T08:00:00",
+            "endValidity": "2024-12-22T14:59:59"
+        },
+        "PM": {
+            "data": [
+                {
+                    "altitude": 3000,
+                    "heading": 240,
+                    "wind": 14,
+                    "temperature": 0
+                },
+                {
+                    "altitude": 6000,
+                    "heading": 250,
+                    "wind": 15,
+                    "temperature": -16
+                },
+                {
+                    "altitude": 9000,
+                    "heading": 260,
+                    "wind": 18,
+                    "temperature": -18
+                },
+                {
+                    "altitude": 12000,
+                    "heading": 280,
+                    "wind": 22,
+                    "temperature": -20
+                },
+                {
+                    "altitude": 18000,
+                    "heading": 310,
+                    "wind": 32,
+                    "temperature": -28
+                },
+                {
+                    "altitude": 24000,
+                    "heading": 330,
+                    "wind": 52,
+                    "temperature": -37
+                },
+                {
+                    "altitude": 30000,
+                    "heading": 330,
+                    "wind": 72,
+                    "temperature": -50
+                },
+                {
+                    "altitude": 34000,
+                    "heading": 320,
+                    "wind": 65,
+                    "temperature": -58
+                },
+                {
+                    "altitude": 39000,
+                    "heading": 310,
+                    "wind": 60,
+                    "temperature": -59
+                },
+                {
+                    "altitude": 45000,
+                    "heading": 310,
+                    "wind": 57,
+                    "temperature": -52
+                },
+                {
+                    "altitude": 53000,
+                    "heading": 300,
+                    "wind": 55,
+                    "temperature": -55
+                }
+            ],
+            "startValidity": "2024-12-22T15:00:00",
+            "endValidity": "2024-12-22T23:59:59"
+        },
+        "NIGHT": {
+            "data": [
+                {
+                    "altitude": 3000,
+                    "heading": 230,
+                    "wind": 39,
+                    "temperature": 0
+                },
+                {
+                    "altitude": 6000,
+                    "heading": 270,
+                    "wind": 28,
+                    "temperature": -12
+                },
+                {
+                    "altitude": 9000,
+                    "heading": 240,
+                    "wind": 26,
+                    "temperature": -15
+                },
+                {
+                    "altitude": 12000,
+                    "heading": 280,
+                    "wind": 41,
+                    "temperature": -16
+                },
+                {
+                    "altitude": 18000,
+                    "heading": 300,
+                    "wind": 47,
+                    "temperature": -26
+                },
+                {
+                    "altitude": 24000,
+                    "heading": 280,
+                    "wind": 49,
+                    "temperature": -38
+                },
+                {
+                    "altitude": 30000,
+                    "heading": 290,
+                    "wind": 54,
+                    "temperature": -52
+                },
+                {
+                    "altitude": 34000,
+                    "heading": 290,
+                    "wind": 56,
+                    "temperature": -57
+                },
+                {
+                    "altitude": 39000,
+                    "heading": 300,
+                    "wind": 54,
+                    "temperature": -56
+                },
+                {
+                    "altitude": 45000,
+                    "heading": 290,
+                    "wind": 49,
+                    "temperature": -52
+                },
+                {
+                    "altitude": 53000,
+                    "heading": 280,
+                    "wind": 44,
+                    "temperature": -57
+                }
+            ],
+            "startValidity": "2024-12-23T00:00:00",
+            "endValidity": "2024-12-23T12:00:00"
+        },
+        "RAW": {
+            "data": [
+                {
+                    "meta": {
+                        "now": "2024-12-22T11:00:02.319",
+                        "count": {
+                            "upperwind": 6
+                        },
+                        "messages": []
+                    },
+                    "data": [
+                        {
+                            "type": "upperwind",
+                            "pk": "351258319",
+                            "location": "YYU",
+                            "startValidity": "2024-12-23T00:01:00",
+                            "endValidity": "2024-12-23T12:00:00",
+                            "text": "[\"FBCN35\", \"KWNO\", \"2024-12-22T07:58:00+00:00\", \"2024-12-22T06:00:00+00:00\", \"2024-12-23T06:00:00+00:00\", \"2024-12-23T00:00:00+00:00\", \"2024-12-23T12:00:00+00:00\", null, null, null, null, [[53000,280,44,-57,0],[24000,280,49,-38,0],[30000,290,54,-52,0],[34000,290,56,-57,0],[39000,300,54,-56,0],[45000,290,49,-52,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351259575",
+                            "location": "YYU",
+                            "startValidity": "2024-12-23T00:00:00",
+                            "endValidity": "2024-12-23T12:00:00",
+                            "text": "[\"FBCN35\", \"CWAO\", \"2024-12-22T09:30:00+00:00\", \"2024-12-22T06:00:00+00:00\", \"2024-12-23T06:00:00+00:00\", \"2024-12-23T00:00:00+00:00\", \"2024-12-23T12:00:00+00:00\", null, null, null, null, [[18000,300,47,-26,0],[3000,230,39,null,0],[6000,270,28,-12,0],[9000,240,26,-15,0],[12000,280,41,-16,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351258334",
+                            "location": "YYU",
+                            "startValidity": "2024-12-22T15:00:00",
+                            "endValidity": "2024-12-23T00:00:00",
+                            "text": "[\"FBCN33\", \"KWNO\", \"2024-12-22T07:58:00+00:00\", \"2024-12-22T06:00:00+00:00\", \"2024-12-22T18:00:00+00:00\", \"2024-12-22T15:00:00+00:00\", \"2024-12-23T00:00:00+00:00\", null, null, null, null, [[45000,310,57,-52,0],[53000,300,55,-55,0],[39000,310,60,-59,0],[34000,320,65,-58,0],[30000,330,72,-50,0],[24000,330,52,-37,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351259385",
+                            "location": "YYU",
+                            "startValidity": "2024-12-22T15:00:00",
+                            "endValidity": "2024-12-22T23:59:59",
+                            "text": "[\"FBCN33\", \"CWAO\", \"2024-12-22T09:30:00+00:00\", \"2024-12-22T06:00:00+00:00\", \"2024-12-22T18:00:00+00:00\", \"2024-12-22T15:00:00+00:00\", \"2024-12-23T00:00:00+00:00\", null, null, null, null, [[12000,280,22,-20,0],[6000,250,15,-16,0],[3000,240,14,null,0],[9000,260,18,-18,0],[18000,310,32,-28,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351258311",
+                            "location": "YYU",
+                            "startValidity": "2024-12-22T08:00:00",
+                            "endValidity": "2024-12-22T14:59:59",
+                            "text": "[\"FBCN31\", \"KWNO\", \"2024-12-22T07:58:00+00:00\", \"2024-12-22T06:00:00+00:00\", \"2024-12-22T12:00:00+00:00\", \"2024-12-22T08:00:00+00:00\", \"2024-12-22T15:00:00+00:00\", null, null, null, null, [[53000,310,58,-56,0],[24000,320,39,-40,0],[30000,330,46,-53,0],[34000,330,51,-55,0],[39000,320,52,-54,0],[45000,310,58,-53,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351259340",
+                            "location": "YYU",
+                            "startValidity": "2024-12-22T08:00:00",
+                            "endValidity": "2024-12-22T14:59:59",
+                            "text": "[\"FBCN31\", \"CWAO\", \"2024-12-22T09:20:00+00:00\", \"2024-12-22T06:00:00+00:00\", \"2024-12-22T12:00:00+00:00\", \"2024-12-22T08:00:00+00:00\", \"2024-12-22T15:00:00+00:00\", null, null, null, null, [[6000,290,13,-17,0],[9000,300,14,-18,0],[12000,310,19,-21,0],[18000,310,32,-30,0],[3000,240,12,null,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "datetime": "2024-12-22T11:00:01.378787"
+    },
+    {
+        "_id": {
+            "$oid": "676942b03a0ebc512ba91803"
+        },
+        "AM": {
+            "data": [
+                {
+                    "altitude": 3000,
+                    "heading": 250,
+                    "wind": 27,
+                    "temperature": 0
+                },
+                {
+                    "altitude": 6000,
+                    "heading": 270,
+                    "wind": 29,
+                    "temperature": -12
+                },
+                {
+                    "altitude": 9000,
+                    "heading": 270,
+                    "wind": 40,
+                    "temperature": -11
+                },
+                {
+                    "altitude": 12000,
+                    "heading": 270,
+                    "wind": 41,
+                    "temperature": -15
+                },
+                {
+                    "altitude": 18000,
+                    "heading": 280,
+                    "wind": 44,
+                    "temperature": -27
+                },
+                {
+                    "altitude": 24000,
+                    "heading": 290,
+                    "wind": 50,
+                    "temperature": -37
+                },
+                {
+                    "altitude": 30000,
+                    "heading": 290,
+                    "wind": 52,
+                    "temperature": -51
+                },
+                {
+                    "altitude": 34000,
+                    "heading": 290,
+                    "wind": 58,
+                    "temperature": -57
+                },
+                {
+                    "altitude": 39000,
+                    "heading": 300,
+                    "wind": 55,
+                    "temperature": -57
+                },
+                {
+                    "altitude": 45000,
+                    "heading": 290,
+                    "wind": 48,
+                    "temperature": -53
+                },
+                {
+                    "altitude": 53000,
+                    "heading": 280,
+                    "wind": 47,
+                    "temperature": -58
+                }
+            ],
+            "startValidity": "2024-12-23T08:00:00",
+            "endValidity": "2024-12-23T14:59:59"
+        },
+        "PM": {
+            "data": [
+                {
+                    "altitude": 3000,
+                    "heading": 320,
+                    "wind": 12,
+                    "temperature": 0
+                },
+                {
+                    "altitude": 6000,
+                    "heading": 270,
+                    "wind": 27,
+                    "temperature": -14
+                },
+                {
+                    "altitude": 9000,
+                    "heading": 280,
+                    "wind": 32,
+                    "temperature": -12
+                },
+                {
+                    "altitude": 12000,
+                    "heading": 280,
+                    "wind": 39,
+                    "temperature": -16
+                },
+                {
+                    "altitude": 18000,
+                    "heading": 290,
+                    "wind": 41,
+                    "temperature": -26
+                },
+                {
+                    "altitude": 24000,
+                    "heading": 290,
+                    "wind": 42,
+                    "temperature": -37
+                },
+                {
+                    "altitude": 30000,
+                    "heading": 290,
+                    "wind": 47,
+                    "temperature": -50
+                },
+                {
+                    "altitude": 34000,
+                    "heading": 290,
+                    "wind": 50,
+                    "temperature": -56
+                },
+                {
+                    "altitude": 39000,
+                    "heading": 290,
+                    "wind": 49,
+                    "temperature": -57
+                },
+                {
+                    "altitude": 45000,
+                    "heading": 290,
+                    "wind": 50,
+                    "temperature": -55
+                },
+                {
+                    "altitude": 53000,
+                    "heading": 290,
+                    "wind": 50,
+                    "temperature": -57
+                }
+            ],
+            "startValidity": "2024-12-23T15:00:00",
+            "endValidity": "2024-12-23T23:59:59"
+        },
+        "NIGHT": {
+            "data": [
+                {
+                    "altitude": 3000,
+                    "heading": 340,
+                    "wind": 9,
+                    "temperature": 0
+                },
+                {
+                    "altitude": 6000,
+                    "heading": 340,
+                    "wind": 20,
+                    "temperature": -9
+                },
+                {
+                    "altitude": 9000,
+                    "heading": 360,
+                    "wind": 29,
+                    "temperature": -9
+                },
+                {
+                    "altitude": 12000,
+                    "heading": 10,
+                    "wind": 40,
+                    "temperature": -11
+                },
+                {
+                    "altitude": 18000,
+                    "heading": 360,
+                    "wind": 45,
+                    "temperature": -23
+                },
+                {
+                    "altitude": 24000,
+                    "heading": 350,
+                    "wind": 36,
+                    "temperature": -34
+                },
+                {
+                    "altitude": 30000,
+                    "heading": 330,
+                    "wind": 39,
+                    "temperature": -51
+                },
+                {
+                    "altitude": 34000,
+                    "heading": 330,
+                    "wind": 37,
+                    "temperature": -59
+                },
+                {
+                    "altitude": 39000,
+                    "heading": 320,
+                    "wind": 44,
+                    "temperature": -60
+                },
+                {
+                    "altitude": 45000,
+                    "heading": 320,
+                    "wind": 47,
+                    "temperature": -56
+                },
+                {
+                    "altitude": 53000,
+                    "heading": 310,
+                    "wind": 55,
+                    "temperature": -57
+                }
+            ],
+            "startValidity": "2024-12-24T00:00:00",
+            "endValidity": "2024-12-24T12:00:00"
+        },
+        "RAW": {
+            "data": [
+                {
+                    "meta": {
+                        "now": "2024-12-23T11:00:04.933",
+                        "count": {
+                            "upperwind": 6
+                        },
+                        "messages": []
+                    },
+                    "data": [
+                        {
+                            "type": "upperwind",
+                            "pk": "351348151",
+                            "location": "YYU",
+                            "startValidity": "2024-12-24T00:00:00",
+                            "endValidity": "2024-12-24T12:00:00",
+                            "text": "[\"FBCN35\", \"KWNO\", \"2024-12-23T07:58:00+00:00\", \"2024-12-23T06:00:00+00:00\", \"2024-12-24T06:00:00+00:00\", \"2024-12-24T00:00:00+00:00\", \"2024-12-24T12:00:00+00:00\", null, null, null, null, [[39000,320,44,-60,0],[45000,320,47,-56,0],[53000,310,55,-57,0],[24000,350,36,-34,0],[30000,330,39,-51,0],[34000,330,37,-59,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351349402",
+                            "location": "YYU",
+                            "startValidity": "2024-12-24T00:00:00",
+                            "endValidity": "2024-12-24T12:00:00",
+                            "text": "[\"FBCN35\", \"CWAO\", \"2024-12-23T09:30:00+00:00\", \"2024-12-23T06:00:00+00:00\", \"2024-12-24T06:00:00+00:00\", \"2024-12-24T00:00:00+00:00\", \"2024-12-24T12:00:00+00:00\", null, null, null, null, [[9000,360,29,-9,0],[3000,340,9,null,0],[18000,360,45,-23,0],[12000,10,40,-11,0],[6000,340,20,-9,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351348141",
+                            "location": "YYU",
+                            "startValidity": "2024-12-23T15:00:00",
+                            "endValidity": "2024-12-23T23:59:59",
+                            "text": "[\"FBCN33\", \"KWNO\", \"2024-12-23T07:58:00+00:00\", \"2024-12-23T06:00:00+00:00\", \"2024-12-23T18:00:00+00:00\", \"2024-12-23T15:00:00+00:00\", \"2024-12-24T00:00:00+00:00\", null, null, null, null, [[24000,290,42,-37,0],[53000,290,50,-57,0],[45000,290,50,-55,0],[39000,290,49,-57,0],[34000,290,50,-56,0],[30000,290,47,-50,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351349258",
+                            "location": "YYU",
+                            "startValidity": "2024-12-23T15:00:00",
+                            "endValidity": "2024-12-23T23:59:59",
+                            "text": "[\"FBCN33\", \"CWAO\", \"2024-12-23T09:30:00+00:00\", \"2024-12-23T06:00:00+00:00\", \"2024-12-23T18:00:00+00:00\", \"2024-12-23T15:00:00+00:00\", \"2024-12-24T00:00:00+00:00\", null, null, null, null, [[9000,280,32,-12,0],[6000,270,27,-14,0],[3000,320,12,null,0],[12000,280,39,-16,0],[18000,290,41,-26,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351348137",
+                            "location": "YYU",
+                            "startValidity": "2024-12-23T08:00:00",
+                            "endValidity": "2024-12-23T14:59:59",
+                            "text": "[\"FBCN31\", \"KWNO\", \"2024-12-23T07:58:00+00:00\", \"2024-12-23T06:00:00+00:00\", \"2024-12-23T12:00:00+00:00\", \"2024-12-23T08:00:00+00:00\", \"2024-12-23T15:00:00+00:00\", null, null, null, null, [[53000,280,47,-58,0],[24000,290,50,-37,0],[30000,290,52,-51,0],[34000,290,58,-57,0],[39000,300,55,-57,0],[45000,290,48,-53,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351349193",
+                            "location": "YYU",
+                            "startValidity": "2024-12-23T08:00:00",
+                            "endValidity": "2024-12-23T14:59:59",
+                            "text": "[\"FBCN31\", \"CWAO\", \"2024-12-23T09:20:00+00:00\", \"2024-12-23T06:00:00+00:00\", \"2024-12-23T12:00:00+00:00\", \"2024-12-23T08:00:00+00:00\", \"2024-12-23T15:00:00+00:00\", null, null, null, null, [[12000,270,41,-15,0],[6000,270,29,-12,0],[3000,250,27,null,0],[18000,280,44,-27,0],[9000,270,40,-11,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "datetime": "2024-12-23T11:00:00.873047"
+    },
+    {
+        "_id": {
+            "$oid": "676a94303a0ebc512ba91807"
+        },
+        "AM": {
+            "data": [
+                {
+                    "altitude": 3000,
+                    "heading": 320,
+                    "wind": 7,
+                    "temperature": 0
+                },
+                {
+                    "altitude": 6000,
+                    "heading": 350,
+                    "wind": 14,
+                    "temperature": -5
+                },
+                {
+                    "altitude": 9000,
+                    "heading": 340,
+                    "wind": 21,
+                    "temperature": -8
+                },
+                {
+                    "altitude": 12000,
+                    "heading": 340,
+                    "wind": 30,
+                    "temperature": -11
+                },
+                {
+                    "altitude": 18000,
+                    "heading": 330,
+                    "wind": 40,
+                    "temperature": -25
+                },
+                {
+                    "altitude": 24000,
+                    "heading": 340,
+                    "wind": 42,
+                    "temperature": -38
+                },
+                {
+                    "altitude": 30000,
+                    "heading": 340,
+                    "wind": 48,
+                    "temperature": -50
+                },
+                {
+                    "altitude": 34000,
+                    "heading": 340,
+                    "wind": 47,
+                    "temperature": -53
+                },
+                {
+                    "altitude": 39000,
+                    "heading": 340,
+                    "wind": 44,
+                    "temperature": -55
+                },
+                {
+                    "altitude": 45000,
+                    "heading": 310,
+                    "wind": 48,
+                    "temperature": -57
+                },
+                {
+                    "altitude": 53000,
+                    "heading": 300,
+                    "wind": 53,
+                    "temperature": -57
+                }
+            ],
+            "startValidity": "2024-12-24T08:00:00",
+            "endValidity": "2024-12-24T14:59:59"
+        },
+        "PM": {
+            "data": [
+                {
+                    "altitude": 3000,
+                    "heading": 250,
+                    "wind": 12,
+                    "temperature": 0
+                },
+                {
+                    "altitude": 6000,
+                    "heading": 340,
+                    "wind": 12,
+                    "temperature": -4
+                },
+                {
+                    "altitude": 9000,
+                    "heading": 340,
+                    "wind": 17,
+                    "temperature": -6
+                },
+                {
+                    "altitude": 12000,
+                    "heading": 340,
+                    "wind": 21,
+                    "temperature": -10
+                },
+                {
+                    "altitude": 18000,
+                    "heading": 330,
+                    "wind": 35,
+                    "temperature": -24
+                },
+                {
+                    "altitude": 24000,
+                    "heading": 340,
+                    "wind": 41,
+                    "temperature": -36
+                },
+                {
+                    "altitude": 30000,
+                    "heading": 340,
+                    "wind": 38,
+                    "temperature": -49
+                },
+                {
+                    "altitude": 34000,
+                    "heading": 340,
+                    "wind": 34,
+                    "temperature": -55
+                },
+                {
+                    "altitude": 39000,
+                    "heading": 300,
+                    "wind": 27,
+                    "temperature": -58
+                },
+                {
+                    "altitude": 45000,
+                    "heading": 300,
+                    "wind": 37,
+                    "temperature": -56
+                },
+                {
+                    "altitude": 53000,
+                    "heading": 300,
+                    "wind": 45,
+                    "temperature": -59
+                }
+            ],
+            "startValidity": "2024-12-24T15:00:00",
+            "endValidity": "2024-12-24T23:59:59"
+        },
+        "NIGHT": {
+            "data": [
+                {
+                    "altitude": 3000,
+                    "heading": 240,
+                    "wind": 23,
+                    "temperature": 0
+                },
+                {
+                    "altitude": 6000,
+                    "heading": 250,
+                    "wind": 17,
+                    "temperature": -2
+                },
+                {
+                    "altitude": 9000,
+                    "heading": 250,
+                    "wind": 21,
+                    "temperature": -8
+                },
+                {
+                    "altitude": 12000,
+                    "heading": 240,
+                    "wind": 29,
+                    "temperature": -13
+                },
+                {
+                    "altitude": 18000,
+                    "heading": 250,
+                    "wind": 40,
+                    "temperature": -21
+                },
+                {
+                    "altitude": 24000,
+                    "heading": 260,
+                    "wind": 42,
+                    "temperature": -34
+                },
+                {
+                    "altitude": 30000,
+                    "heading": 270,
+                    "wind": 41,
+                    "temperature": -50
+                },
+                {
+                    "altitude": 34000,
+                    "heading": 260,
+                    "wind": 40,
+                    "temperature": -56
+                },
+                {
+                    "altitude": 39000,
+                    "heading": 290,
+                    "wind": 41,
+                    "temperature": -57
+                },
+                {
+                    "altitude": 45000,
+                    "heading": 290,
+                    "wind": 37,
+                    "temperature": -57
+                },
+                {
+                    "altitude": 53000,
+                    "heading": 300,
+                    "wind": 40,
+                    "temperature": -60
+                }
+            ],
+            "startValidity": "2024-12-25T00:00:00",
+            "endValidity": "2024-12-25T12:00:00"
+        },
+        "RAW": {
+            "data": [
+                {
+                    "meta": {
+                        "now": "2024-12-24T11:00:00.466",
+                        "count": {
+                            "upperwind": 6
+                        },
+                        "messages": []
+                    },
+                    "data": [
+                        {
+                            "type": "upperwind",
+                            "pk": "351440286",
+                            "location": "YYU",
+                            "startValidity": "2024-12-25T00:01:00",
+                            "endValidity": "2024-12-25T12:00:00",
+                            "text": "[\"FBCN35\", \"KWNO\", \"2024-12-24T07:57:00+00:00\", \"2024-12-24T06:00:00+00:00\", \"2024-12-25T06:00:00+00:00\", \"2024-12-25T00:00:00+00:00\", \"2024-12-25T12:00:00+00:00\", null, null, null, null, [[53000,300,40,-60,0],[24000,260,42,-34,0],[30000,270,41,-50,0],[34000,260,40,-56,0],[39000,290,41,-57,0],[45000,290,37,-57,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351441634",
+                            "location": "YYU",
+                            "startValidity": "2024-12-25T00:00:00",
+                            "endValidity": "2024-12-25T12:00:00",
+                            "text": "[\"FBCN35\", \"CWAO\", \"2024-12-24T09:30:00+00:00\", \"2024-12-24T06:00:00+00:00\", \"2024-12-25T06:00:00+00:00\", \"2024-12-25T00:00:00+00:00\", \"2024-12-25T12:00:00+00:00\", null, null, null, null, [[9000,250,21,-8,0],[6000,250,17,-2,0],[3000,240,23,null,0],[18000,250,40,-21,0],[12000,240,29,-13,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351440288",
+                            "location": "YYU",
+                            "startValidity": "2024-12-24T15:01:00",
+                            "endValidity": "2024-12-25T00:00:00",
+                            "text": "[\"FBCN33\", \"KWNO\", \"2024-12-24T07:57:00+00:00\", \"2024-12-24T06:00:00+00:00\", \"2024-12-24T18:00:00+00:00\", \"2024-12-24T15:00:00+00:00\", \"2024-12-25T00:00:00+00:00\", null, null, null, null, [[24000,340,41,-36,0],[53000,300,45,-59,0],[45000,300,37,-56,0],[39000,300,27,-58,0],[34000,340,34,-55,0],[30000,340,38,-49,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351441476",
+                            "location": "YYU",
+                            "startValidity": "2024-12-24T15:00:00",
+                            "endValidity": "2024-12-24T23:59:59",
+                            "text": "[\"FBCN33\", \"CWAO\", \"2024-12-24T09:30:00+00:00\", \"2024-12-24T06:00:00+00:00\", \"2024-12-24T18:00:00+00:00\", \"2024-12-24T15:00:00+00:00\", \"2024-12-25T00:00:00+00:00\", null, null, null, null, [[12000,340,21,-10,0],[6000,340,12,-4,0],[3000,250,12,null,0],[18000,330,35,-24,0],[9000,340,17,-6,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351440315",
+                            "location": "YYU",
+                            "startValidity": "2024-12-24T08:00:00",
+                            "endValidity": "2024-12-24T15:00:00",
+                            "text": "[\"FBCN31\", \"KWNO\", \"2024-12-24T07:57:00+00:00\", \"2024-12-24T06:00:00+00:00\", \"2024-12-24T12:00:00+00:00\", \"2024-12-24T08:00:00+00:00\", \"2024-12-24T15:00:00+00:00\", null, null, null, null, [[39000,340,44,-55,0],[34000,340,47,-53,0],[30000,340,48,-50,0],[24000,340,42,-38,0],[53000,300,53,-57,0],[45000,310,48,-57,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351441393",
+                            "location": "YYU",
+                            "startValidity": "2024-12-24T08:00:00",
+                            "endValidity": "2024-12-24T14:59:59",
+                            "text": "[\"FBCN31\", \"CWAO\", \"2024-12-24T09:20:00+00:00\", \"2024-12-24T06:00:00+00:00\", \"2024-12-24T12:00:00+00:00\", \"2024-12-24T08:00:00+00:00\", \"2024-12-24T15:00:00+00:00\", null, null, null, null, [[6000,350,14,-5,0],[9000,340,21,-8,0],[18000,330,40,-25,0],[12000,340,30,-11,0],[3000,320,7,null,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "datetime": "2024-12-24T11:00:00.464731"
+    },
+    {
+        "_id": {
+            "$oid": "676be5b13a0ebc512ba9180b"
+        },
+        "AM": {
+            "data": [
+                {
+                    "altitude": 3000,
+                    "heading": 270,
+                    "wind": 35,
+                    "temperature": 0
+                },
+                {
+                    "altitude": 6000,
+                    "heading": 250,
+                    "wind": 27,
+                    "temperature": -2
+                },
+                {
+                    "altitude": 9000,
+                    "heading": 260,
+                    "wind": 28,
+                    "temperature": -8
+                },
+                {
+                    "altitude": 12000,
+                    "heading": 290,
+                    "wind": 28,
+                    "temperature": -13
+                },
+                {
+                    "altitude": 18000,
+                    "heading": 280,
+                    "wind": 37,
+                    "temperature": -25
+                },
+                {
+                    "altitude": 24000,
+                    "heading": 300,
+                    "wind": 36,
+                    "temperature": -33
+                },
+                {
+                    "altitude": 30000,
+                    "heading": 320,
+                    "wind": 65,
+                    "temperature": -45
+                },
+                {
+                    "altitude": 34000,
+                    "heading": 330,
+                    "wind": 64,
+                    "temperature": -54
+                },
+                {
+                    "altitude": 39000,
+                    "heading": 310,
+                    "wind": 35,
+                    "temperature": -61
+                },
+                {
+                    "altitude": 45000,
+                    "heading": 300,
+                    "wind": 44,
+                    "temperature": -54
+                },
+                {
+                    "altitude": 53000,
+                    "heading": 300,
+                    "wind": 42,
+                    "temperature": -62
+                }
+            ],
+            "startValidity": "2024-12-25T08:00:00",
+            "endValidity": "2024-12-25T14:59:59"
+        },
+        "PM": {
+            "data": [
+                {
+                    "altitude": 3000,
+                    "heading": 260,
+                    "wind": 25,
+                    "temperature": 0
+                },
+                {
+                    "altitude": 6000,
+                    "heading": 280,
+                    "wind": 15,
+                    "temperature": 1
+                },
+                {
+                    "altitude": 9000,
+                    "heading": 280,
+                    "wind": 15,
+                    "temperature": -6
+                },
+                {
+                    "altitude": 12000,
+                    "heading": 340,
+                    "wind": 12,
+                    "temperature": -11
+                },
+                {
+                    "altitude": 18000,
+                    "heading": 360,
+                    "wind": 35,
+                    "temperature": -17
+                },
+                {
+                    "altitude": 24000,
+                    "heading": 340,
+                    "wind": 45,
+                    "temperature": -31
+                },
+                {
+                    "altitude": 30000,
+                    "heading": 330,
+                    "wind": 59,
+                    "temperature": -48
+                },
+                {
+                    "altitude": 34000,
+                    "heading": 340,
+                    "wind": 59,
+                    "temperature": -57
+                },
+                {
+                    "altitude": 39000,
+                    "heading": 330,
+                    "wind": 41,
+                    "temperature": -63
+                },
+                {
+                    "altitude": 45000,
+                    "heading": 300,
+                    "wind": 53,
+                    "temperature": -55
+                },
+                {
+                    "altitude": 53000,
+                    "heading": 270,
+                    "wind": 47,
+                    "temperature": -63
+                }
+            ],
+            "startValidity": "2024-12-25T15:00:00",
+            "endValidity": "2024-12-25T23:59:59"
+        },
+        "NIGHT": {
+            "data": [
+                {
+                    "altitude": 3000,
+                    "heading": 260,
+                    "wind": 24,
+                    "temperature": 0
+                },
+                {
+                    "altitude": 6000,
+                    "heading": 240,
+                    "wind": 21,
+                    "temperature": 1
+                },
+                {
+                    "altitude": 9000,
+                    "heading": 260,
+                    "wind": 14,
+                    "temperature": -4
+                },
+                {
+                    "altitude": 12000,
+                    "heading": 280,
+                    "wind": 14,
+                    "temperature": -6
+                },
+                {
+                    "altitude": 18000,
+                    "heading": 300,
+                    "wind": 34,
+                    "temperature": -16
+                },
+                {
+                    "altitude": 24000,
+                    "heading": 300,
+                    "wind": 26,
+                    "temperature": -30
+                },
+                {
+                    "altitude": 30000,
+                    "heading": 320,
+                    "wind": 34,
+                    "temperature": -47
+                },
+                {
+                    "altitude": 34000,
+                    "heading": 320,
+                    "wind": 45,
+                    "temperature": -57
+                },
+                {
+                    "altitude": 39000,
+                    "heading": 310,
+                    "wind": 57,
+                    "temperature": -67
+                },
+                {
+                    "altitude": 45000,
+                    "heading": 290,
+                    "wind": 54,
+                    "temperature": -62
+                },
+                {
+                    "altitude": 53000,
+                    "heading": 280,
+                    "wind": 60,
+                    "temperature": -61
+                }
+            ],
+            "startValidity": "2024-12-26T00:00:00",
+            "endValidity": "2024-12-26T12:00:00"
+        },
+        "RAW": {
+            "data": [
+                {
+                    "meta": {
+                        "now": "2024-12-25T11:00:01.792",
+                        "count": {
+                            "upperwind": 6
+                        },
+                        "messages": []
+                    },
+                    "data": [
+                        {
+                            "type": "upperwind",
+                            "pk": "351531363",
+                            "location": "YYU",
+                            "startValidity": "2024-12-26T00:01:00",
+                            "endValidity": "2024-12-26T12:00:00",
+                            "text": "[\"FBCN35\", \"KWNO\", \"2024-12-25T07:57:00+00:00\", \"2024-12-25T06:00:00+00:00\", \"2024-12-26T06:00:00+00:00\", \"2024-12-26T00:00:00+00:00\", \"2024-12-26T12:00:00+00:00\", null, null, null, null, [[30000,320,34,-47,0],[34000,320,45,-57,0],[39000,310,57,-67,0],[45000,290,54,-62,0],[53000,280,60,-61,0],[24000,300,26,-30,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351532317",
+                            "location": "YYU",
+                            "startValidity": "2024-12-26T00:00:00",
+                            "endValidity": "2024-12-26T12:00:00",
+                            "text": "[\"FBCN35\", \"CWAO\", \"2024-12-25T09:30:00+00:00\", \"2024-12-25T06:00:00+00:00\", \"2024-12-26T06:00:00+00:00\", \"2024-12-26T00:00:00+00:00\", \"2024-12-26T12:00:00+00:00\", null, null, null, null, [[3000,260,24,null,0],[6000,240,21,1,0],[9000,260,14,-4,0],[12000,280,14,-6,0],[18000,300,34,-16,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351531372",
+                            "location": "YYU",
+                            "startValidity": "2024-12-25T15:01:00",
+                            "endValidity": "2024-12-26T00:00:00",
+                            "text": "[\"FBCN33\", \"KWNO\", \"2024-12-25T07:57:00+00:00\", \"2024-12-25T06:00:00+00:00\", \"2024-12-25T18:00:00+00:00\", \"2024-12-25T15:00:00+00:00\", \"2024-12-26T00:00:00+00:00\", null, null, null, null, [[53000,270,47,-63,0],[45000,300,53,-55,0],[39000,330,41,-63,0],[34000,340,59,-57,0],[30000,330,59,-48,0],[24000,340,45,-31,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351532201",
+                            "location": "YYU",
+                            "startValidity": "2024-12-25T15:00:00",
+                            "endValidity": "2024-12-25T23:59:59",
+                            "text": "[\"FBCN33\", \"CWAO\", \"2024-12-25T09:30:00+00:00\", \"2024-12-25T06:00:00+00:00\", \"2024-12-25T18:00:00+00:00\", \"2024-12-25T15:00:00+00:00\", \"2024-12-26T00:00:00+00:00\", null, null, null, null, [[3000,260,25,null,0],[18000,360,35,-17,0],[12000,340,12,-11,0],[9000,280,15,-6,0],[6000,280,15,1,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351531376",
+                            "location": "YYU",
+                            "startValidity": "2024-12-25T08:00:00",
+                            "endValidity": "2024-12-25T15:00:00",
+                            "text": "[\"FBCN31\", \"KWNO\", \"2024-12-25T07:57:00+00:00\", \"2024-12-25T06:00:00+00:00\", \"2024-12-25T12:00:00+00:00\", \"2024-12-25T08:00:00+00:00\", \"2024-12-25T15:00:00+00:00\", null, null, null, null, [[45000,300,44,-54,0],[39000,310,35,-61,0],[34000,330,64,-54,0],[30000,320,65,-45,0],[53000,300,42,-62,0],[24000,300,36,-33,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        },
+                        {
+                            "type": "upperwind",
+                            "pk": "351532118",
+                            "location": "YYU",
+                            "startValidity": "2024-12-25T08:00:00",
+                            "endValidity": "2024-12-25T14:59:59",
+                            "text": "[\"FBCN31\", \"CWAO\", \"2024-12-25T09:20:00+00:00\", \"2024-12-25T06:00:00+00:00\", \"2024-12-25T12:00:00+00:00\", \"2024-12-25T08:00:00+00:00\", \"2024-12-25T15:00:00+00:00\", null, null, null, null, [[3000,270,35,null,0],[18000,280,37,-25,0],[12000,290,28,-13,0],[9000,260,28,-8,0],[6000,250,27,-2,0]]]",
+                            "hasError": false,
+                            "position": {
+                                "pointReference": "CYYU",
+                                "radialDistance": 0
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "datetime": "2024-12-25T11:00:01.493959"
+    }
+]

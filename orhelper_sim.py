@@ -1,19 +1,47 @@
-import os
+"""
+OpenRocket simulation module using orhelper.
+Manages rocket simulations through OpenRocket, including setup, execution,
+and results processing.
+"""
+
 from orhelper import FlightDataType
 import orhelper
 from orhelper import FlightDataType, FlightEvent
 from matplotlib import pyplot as plt
-from matplotlib import patches as patches
-from matplotlib.patches import Ellipse
+from matplotlib import patches
 import math
 import numpy as np
-from scipy import stats as stats
-import seaborn as sns
+from scipy import stats
 
 class OpenRocketSimulation:
+    """
+    Manages OpenRocket simulations using wind data and rocket design files.
+    
+    Handles:
+    - Simulation setup and execution
+    - Wind data application
+    - Results collection and analysis
+    - Statistical analysis and visualization
+    
+    Attributes:
+        ork_file (str): Path to OpenRocket design file
+        wind_data (list): Formatted wind data for simulations
+        ranges (list): Landing ranges from launch site
+        bearings (list): Landing bearings from launch site
+        apogee (list): Apogee heights for each simulation
+        stability (list): Stability data for each simulation
+        flightdata (dict): Flight data from simulations
+        landingpoints (list): Landing point data for each simulation
+    """
 
     def __init__(self, wind_data, ork_file):
-
+        """
+        Initialize OpenRocket simulation manager.
+        
+        Args:
+            wind_data (list): Formatted wind data for simulations
+            ork_file (str): Path to OpenRocket design file
+        """
         self.ork_file = ork_file
         self.wind_data = wind_data
         self.ranges = []
@@ -24,24 +52,31 @@ class OpenRocketSimulation:
         self.landingpoints = []
 
     def simulation(self):
+        """
+        Run OpenRocket simulations with specified wind conditions.
+        
+        For each simulation:
+        - Sets up wind model
+        - Runs simulation
+        - Collects flight data
+        - Records apogee and landing points
+        """
         i = 0
         try:
             with orhelper.OpenRocketInstance() as instance:
-                # Load the document and get simulation
                 orh = orhelper.Helper(instance)
                 doc = orh.load_doc(self.ork_file)
                 sim = doc.getSimulation(3)
-                # Randomize various parameters
                 opts = sim.getOptions()
 
-                # Run num simulations and add to self
                 for data in self.wind_data:
                     print('Running simulation ', i+1)
+                    print(f"First wind point: {data[0]}")
 
-                    opts.setWindModelType(instance.wind.WindModelType.MULTI_LEVEL)  # Set multi-level winds
+                    opts.setWindModelType(instance.wind.WindModelType.MULTI_LEVEL)
                     model = opts.getWindModel()
                     model.clearLevels()
-                    # Adding all wind level for a day of simulation
+                    
                     for wind in data:
                         model.addWindLevel(wind[0],wind[1],wind[2],0.2)
 
@@ -50,109 +85,62 @@ class OpenRocketSimulation:
                     orh.run_simulation(sim, listeners=(airstarter, lp))
 
                     self.flightdata = orh.get_timeseries(sim, [FlightDataType.TYPE_TIME, FlightDataType.TYPE_STABILITY, FlightDataType.TYPE_ALTITUDE])
-
                     self.apogee.append(max(self.flightdata[FlightDataType.TYPE_ALTITUDE]))
                     self.landingpoints.append(lp)
-                    #self.stability = np.concatenate(self.stability, self.flightdata[FlightDataType.TYPE_STABILITY])
-                    #print(max(self.flightdata[FlightDataType.TYPE_ALTITUDE]))
-
-
                     i += 1
-
 
         except Exception as e:
             print(f"Error during simulation: {e}")
-
-
+            raise e
 
     def print_stats(self):
+        """
+        Print and visualize simulation statistics.
+        
+        Displays:
+        - Average landing zone distance and bearing
+        - Standard deviations
+        - Mean flight apogee
+        - Confidence ellipses for landing points
+        """
         print(
             'Rocket landing zone %3.2f m +- %3.2f m bearing %3.2f deg +- %3.4f deg from launch site. Based on %i simulations.' % \
             (np.mean(self.ranges), np.std(self.ranges), np.degrees(np.mean(self.bearings)),
              np.degrees(np.std(self.bearings)), len(self.landingpoints)))
         print('Mean flight Apogee', np.mean(self.apogee), 'm')
 
-
-        # Scatter points from Monte Carlo
         x = self.ranges * np.cos(self.bearings)
         y = self.ranges * np.sin(self.bearings)
         data = np.column_stack((x,y))
         mean = np.mean(data, axis=0)
-        cov = np.cov(data,rowvar=False)
 
-        #Cocentric circle
         confidences = [0.80, 0.90, 0.99]
-        #Façon de représenter la distribution de donnée en 2D
-        chisq_vals = []
-        for i in confidences:
-            chisq_vals.append(np.sqrt(stats.chi2.ppf(i, df=2)) )
+        chisq_vals = [np.sqrt(stats.chi2.ppf(i, df=2)) for i in confidences]
 
-
-        # Plot
-        (fig,ax) = plt.subplots()
+        fig, ax = plt.subplots()
         ax.scatter(x, y, label='Landing points')
         colors = ['blue', 'green', 'red']
 
         for i, k in enumerate(chisq_vals):
-            
             radius = k * np.std(self.ranges)
             circle = patches.Circle(xy=mean, radius=radius,
                                edgecolor=colors[i],
-                              facecolor='none', label=f'{int(confidences[i] * 100)}% landing zone')
+                               facecolor='none', label=f'{int(confidences[i] * 100)}% landing zone')
             ax.add_patch(circle)
 
-
-
-
-        #ax.set_aspect('equal')
         ax.legend()
         ax.set_title('Confidence Ellipses')
         plt.grid(True)
         plt.show()
 
-
-
-
-
-        """
-        # KDE heatmap
-                kde = sns.kdeplot(x=x, y=y, fill=True, cmap="viridis", levels=10, thresh=0.01)
-        
-                plt.plot(0, 0, 'ro', label='Launchpad')
-                plt.title("Monte Carlo Rocket Landing Density")
-                plt.xlabel("Landing position (m)")
-                plt.ylabel("Landing position (m)")
-                plt.legend()
-                plt.axis('equal')
-                plt.grid(True)
-                plt.show()
-        """
-
-
-
-
-        """
-        #Plotting stability over time
-        fig = plt.figure()
-        ax1 = fig.add_subplot(111)
-
-        ax1.plot(self.flightdata[FlightDataType.TYPE_TIME], self.flightdata[FlightDataType.TYPE_STABILITY], 'b-')
-        ax1.set_xlabel('Time (s)')
-        ax1.set_ylabel('Stability', color='b')
-        plt.show()
-        """
-
-class Apogee(orhelper.AbstractSimulationListener):
-    def __init__(self):
-        self.apogee = 0
-        pass
-
-    def endSimulation(self, status, simulation_exception):
-        #EVENTS = get_events(sim)
-        pass
-
-
 class LandingPoint(orhelper.AbstractSimulationListener):
+    """
+    Listener for tracking landing points during simulations.
+    
+    Attributes:
+        ranges (list): Collection of landing distances
+        bearings (list): Collection of landing bearings
+    """
     def __init__(self, ranges, bearings):
         self.ranges = ranges
         self.bearings = bearings
@@ -166,7 +154,12 @@ class LandingPoint(orhelper.AbstractSimulationListener):
         self.bearings.append(bearing_flat(launchpos, worldpos))
 
 class AirStart(orhelper.AbstractSimulationListener):
-
+    """
+    Listener for setting initial conditions for air-started simulations.
+    
+    Attributes:
+        start_altitude (float): Starting altitude for the simulation
+    """
     def __init__(self, altitude):
         self.start_altitude = altitude
 
@@ -175,21 +168,38 @@ class AirStart(orhelper.AbstractSimulationListener):
         position = position.add(0.0, 0.0, self.start_altitude)
         status.setRocketPosition(position)
 
-
 METERS_PER_DEGREE_LATITUDE = 111325
 METERS_PER_DEGREE_LONGITUDE_EQUATOR = 111050
 
-
 def range_flat(start, end):
+    """
+    Calculate flat-earth distance between two points.
+    
+    Args:
+        start: Starting position with getLatitudeDeg() and getLongitudeDeg() methods
+        end: Ending position with getLatitudeDeg() and getLongitudeDeg() methods
+        
+    Returns:
+        float: Distance in meters between the two points
+    """
     dy = (end.getLatitudeDeg() - start.getLatitudeDeg()) * METERS_PER_DEGREE_LATITUDE
     dx = (end.getLongitudeDeg() - start.getLongitudeDeg()) * METERS_PER_DEGREE_LONGITUDE_EQUATOR
     return math.sqrt(dy * dy + dx * dx)
 
-
 def bearing_flat(start, end):
+    """
+    Calculate flat-earth bearing between two points.
+    
+    Args:
+        start: Starting position with getLatitudeDeg() and getLongitudeDeg() methods
+        end: Ending position with getLatitudeDeg() and getLongitudeDeg() methods
+        
+    Returns:
+        float: Bearing in radians from start to end point
+    """
     dy = (end.getLatitudeDeg() - start.getLatitudeDeg()) * METERS_PER_DEGREE_LATITUDE
     dx = (end.getLongitudeDeg() - start.getLongitudeDeg()) * METERS_PER_DEGREE_LONGITUDE_EQUATOR
-    return  math.atan2(dy , dx)
+    return math.atan2(dy, dx)
 
 
 
