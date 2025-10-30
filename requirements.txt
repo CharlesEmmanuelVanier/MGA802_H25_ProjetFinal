@@ -1,8 +1,8 @@
-numpy
-matplotlib
-jpype1
-pillow
-tkcalendar
-scipy
-seaborn
-orhelper 
+numpy==2.2.2
+matplotlib==3.9.2
+jpype1==1.5.1
+pillow==11.1.0
+tkcalendar==1.6.1
+scipy==1.14.1
+seaborn==0.13.2
+orhelper==1.7.0
